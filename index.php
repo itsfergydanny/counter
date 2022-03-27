@@ -66,6 +66,10 @@
 
     <main class="container">
         <h1>Counter App</h1>
+        <?php if (count($counters) < 1) {
+            echo "<h2 style='text-align: center;'>No counters. Add one to get started!</h2>";
+        }
+        ?>
         <?php foreach($counters as $counter): ?>
             <div class="counter">
                 <h2 class="title"><?=  $counter['display']  ?></h2>
