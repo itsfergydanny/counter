@@ -1,5 +1,21 @@
+
+/*
+
+    --midnight-blue: #03045eff;
+    --dark-cornflower-blue: #023e8aff;
+    --star-command-blue: #0077b6ff;
+    --blue-green: #0096c7ff;
+    --pacific-blue: #00b4d8ff;
+    --sky-blue-crayola: #48cae4ff;
+    --middle-blue: #90e0efff;
+    --blizzard-blue: #ade8f4ff;
+    --light-cyan: #caf0f8ff;
+
+*/
+
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 html {
     padding: 0;
@@ -8,4 +24,91 @@ html {
 .container {
     margin-left: 30%;
     margin-right: 30%;
+}
+h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #03045e;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #caf0f8;
+    border-bottom: 1px solid rgba(3, 4, 94, 0.25);
+    border-right: 1px solid rgba(3, 4, 94, 0.25);
+    border-left: 1px solid rgba(3, 4, 94, 0.25);
+
+}
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 20px 60px;
+    padding: 10px 30px;
+    background-color: #03045e;
+    color: white;
+    border-radius: 25px;
+}
+a:hover {
+    opacity: 0.7;
+    transition-duration: 0.2s;
+}
+.counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+}
+h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+.count {
+    font-size: 4rem;
+    padding: 10px 30px;
+    border-radius: 100px;
+    margin: 20px 0;
+    background-color: white;
+    color: #03045e;
+    border: 1px solid rgba(3, 4, 94, 0.25);
+}
+p {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+.addform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addform label {
+    font-size: 1.4rem;
+}
+.addform input {
+    margin-top: 15px;
+    height: 40px;
+    width: 70%;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.addform button {
+    font-size: 1.8rem;
+}
+.addform p {
+    margin-bottom: 45px;
 }

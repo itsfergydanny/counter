@@ -25,18 +25,24 @@ $sql = new SQL($config);
 
 <main class="container">
     <h1>Add a new counter!</h1>
-    <form action="index.php" method="post">
+    <form action="index.php" method="post" class="addform">
         <label for="id">ID: </label>
-        <input type="text" name="id" id="id" placeholder="days without doing something bad">
+        <input type="text" name="id" id="id" placeholder="no_delivery" pattern=".{3,}" required>
+        <p>Minimum 3 characters.</p>
         <br>
         <label for="display">Display Name: </label>
-        <input type="text" name="display" id="display" placeholder="DAYS WITHOUT X (you can use emojis here)">
+        <input type="text" name="display" id="display" placeholder="DAYS WITHOUT X (you can use emojis here)" pattern=".{1,}" required>
+        <p>Minimum 1 characters.</p>
         <br>
         <label for="initial">Initial Value: </label>
-        <input type="text" name="initial" id="initial" value="0">
+        <input type="text" name="initial" id="initial" value="0" pattern=".{1,}" required>
+        <p>Minimum 1 characters.</p>
         <br>
         <button>Submit</button>
     </form>
+    <div class="back">
+        <a href="index.php">Back</a>
+    </div>
 </main>
 
 <footer>

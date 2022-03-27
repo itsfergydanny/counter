@@ -17,7 +17,7 @@ class SQL {
     }
 
     private function createTable() {
-        $this->pdo->exec("CREATE TABLE IF NOT EXISTS counters ( id VARCHAR(100) NOT NULL , display VARCHAR(128) NOT NULL, count INT NOT NULL , UNIQUE (id)) ENGINE = InnoDB;");
+        $this->pdo->exec("CREATE TABLE IF NOT EXISTS counters ( id VARCHAR(100) NOT NULL , display VARCHAR(128) NOT NULL, count INT NOT NULL , last_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , UNIQUE (id)) ENGINE = InnoDB;");
     }
 
     public function prepare($statement) {
@@ -56,11 +56,11 @@ class SQL {
     }
 
     public function increment($id) {
-        $this->prepare("UPDATE counters SET count=count+1 WHERE id = ?")->execute([$id]);
+        $this->prepare("UPDATE counters SET count=count+1, last_updated=CURRENT_TIMESTAMP WHERE id = ?")->execute([$id]);
     }
 
     public function reset($id) {
-        $this->prepare("UPDATE counters SET count=0 WHERE id = ?")->execute([$id]);
+        $this->prepare("UPDATE counters SET count=0, last_updated=CURRENT_TIMESTAMP WHERE id = ?")->execute([$id]);
     }
 
     public function add($id, $display, $initial) {

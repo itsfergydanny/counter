@@ -5,8 +5,6 @@
     $config = new Config();
     $sql = new SQL($config);
 
-    var_dump($_POST);
-
     if (isset($_POST['id']) && isset($_POST['display']) && isset($_POST['initial'])) {
         try {
             $sql->add($_POST['id'], $_POST['display'], $_POST['initial']);
@@ -17,7 +15,6 @@
     }
 
     $counters = $sql->getAll();
-    var_dump($counters);
 
     if (isset($_POST['increase']) && isset($_POST['id'])) {
         $id = $_POST['id'];
@@ -68,7 +65,7 @@
     </header>
 
     <main class="container">
-        <h1>Hii</h1>
+        <h1>Counter App</h1>
         <?php foreach($counters as $counter): ?>
             <div class="counter">
                 <h2 class="title"><?=  $counter['display']  ?></h2>
@@ -79,6 +76,7 @@
                     <input type="submit" name="delete" value="Delete" />
                     <input type="hidden" name="id" value="<?= $counter['id'] ?>">
                 </form>
+                <p>Last updated: <?= $counter['last_updated'] ?></p>
             </div>
         <?php endforeach; ?>
         <div class="add">
